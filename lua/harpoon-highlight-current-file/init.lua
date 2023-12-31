@@ -9,7 +9,8 @@ function M.setup()
 
 	harpoon:extend({
 		[Extensions.event_names.UI_CREATE] = function(ctx)
-			local current = Path:new(ctx.current_file):make_relative(vim.uv.cwd())
+			local current = Path:new(ctx.current_file)
+				:make_relative(vim.uv.cwd())
 			local regex = "\\V" .. current .. "\\$"
 			-- highlight the line
 			vim.fn.matchadd("HarpoonCurrentFile", regex)
