@@ -5,6 +5,8 @@ local Path = require("plenary.path")
 local M = {}
 
 function M.setup()
+	vim.cmd("highlight default link HarpoonCurrentFile String")
+
 	harpoon:extend({
 		[Extensions.event_names.UI_CREATE] = function(ctx)
 			local current = Path:new(ctx.current_file):make_relative(vim.uv.cwd())
