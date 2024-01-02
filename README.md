@@ -9,9 +9,11 @@ The plugin moves the cursor to the line containing the filename of the current b
 ### Using [Lazy.nvim](https://github.com/folke/lazy.nvim)
 ```lua
 {
-	"pockata/harpoon-highlight-current-file",
-	dependencies = { "ThePrimeagen/harpoon" },
-	config = true,
+    "pockata/harpoon-highlight-current-file",
+    dependencies = { "ThePrimeagen/harpoon" },
+    config = function()
+        require("harpoon-highlight-current-file").setup()
+    end,
 },
 ```
 
