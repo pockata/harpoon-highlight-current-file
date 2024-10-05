@@ -11,6 +11,7 @@ function M.setup()
 		[Extensions.event_names.UI_CREATE] = function(ctx)
 			local current = Path:new(ctx.current_file)
 				:make_relative(vim.uv.cwd())
+				:gsub("\\", "\\\\")
 			local regex = "\\V" .. current .. "\\$"
 			-- highlight the line
 			vim.fn.matchadd("HarpoonCurrentFile", regex)
